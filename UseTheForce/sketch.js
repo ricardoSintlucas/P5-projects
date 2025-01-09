@@ -11,10 +11,17 @@ function setup() {
 function draw() {
   background(0);
   for (let mover of movers) {
-    let gravity = createVector(0, 0.2);
+    let gravity = createVector(0, 0.3);
     mover.applyForce(gravity);
     mover.update();
     mover.show();
+    if (mover.contactEdge()) {
+      let c = 0.1;
+      let friction = mover.velocity.copy();
+      friction.mult(-1);
+      friction.setMag(c);
+      mover.applyForce(friction);
+    }
     mover.checkEdges();
     if (mouseIsPressed) {
       let wind = createVector(0.1, 0);

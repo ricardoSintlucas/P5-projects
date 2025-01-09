@@ -5,6 +5,7 @@ class Mover {
     this.acceleration = createVector(0, 0);
     this.mass = mass;
     this.color = color;
+    this.radius = (mass * 10) / 2;
   }
 
   applyForce(force) {
@@ -20,20 +21,25 @@ class Mover {
   show() {
     noStroke();
     fill(this.color[0], this.color[1], this.color[2], 90);
-    circle(this.position.x, this.position.y, this.mass * 10);
+    circle(this.position.x, this.position.y, this.radius * 2);
+  }
+
+  contactEdge() {
+    return this.position.y > height - this.radius - 1;
   }
 
   checkEdges() {
-    if (this.position.x > width) {
-      this.position.x = width;
-      this.velocity.x *= -1;
-    } else if (this.position.x < 0) {
-      this.velocity.x *= -1;
-      this.position.x = 0;
+    let bounce = -0.9;
+    if (this.position.x + this.radius > width) {
+      this.position.x = width - this.radius;
+      this.velocity.x *= bounce;
+    } else if (this.position.x - this.radius < 0) {
+      this.velocity.x *= bounce;
+      this.position.x = this.radius;
     }
-    if (this.position.y > height) {
-      this.velocity.y *= -1;
-      this.position.y = height;
+    if (this.position.y + this.radius > height) {
+      this.velocity.y *= bounce;
+      this.position.y = height - this.radius;
     }
   }
 }
