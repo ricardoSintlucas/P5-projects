@@ -1,9 +1,10 @@
 class Mover {
-  constructor(x, y, mass) {
+  constructor(x, y, mass, color) {
     this.position = createVector(x, y);
     this.velocity = createVector();
     this.acceleration = createVector(0, 0);
     this.mass = mass;
+    this.color = color;
   }
 
   applyForce(force) {
@@ -18,7 +19,7 @@ class Mover {
   }
   show() {
     noStroke();
-    fill(255, 80);
+    fill(this.color[0], this.color[1], this.color[2], 90);
     circle(this.position.x, this.position.y, this.mass * 10);
   }
 

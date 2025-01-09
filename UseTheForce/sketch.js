@@ -3,7 +3,7 @@ let movers = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < 10; i++) {
-    let mover = new Mover(random(width), random(height), random(1, 20));
+    let mover = new Mover(random(width), random(height), random(1, 20), [random(100, 255), random(100, 255), random(100, 255)]);
     movers.push(mover);
   }
 }
