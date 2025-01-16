@@ -1,7 +1,7 @@
 # Vector project with P5.js
 
 ## Description
-Working with verctors in 3D, webgl and P5.js
+Working with verctors in 3D, webgl and P5.js :clown_face:
 
 ## Features
 Sphere that gets a random 3D vector and has boundries.
