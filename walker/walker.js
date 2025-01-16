@@ -8,7 +8,7 @@ class Walker{
 
     show(){
         noStroke();
-        fill(255,0,0, 20);
+        fill(255,255,255, 20);
         circle(this.x,this.y, this.circleSize);
     }
     
