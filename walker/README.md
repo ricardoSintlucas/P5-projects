@@ -4,7 +4,7 @@
 This is a example where random values are used. And P5.js library is used in this project to make it more visual.
 
 ## Features
-It's generating random circles in a canvas. 
+It's generating random circles in a canvas.
 
 ## Technologies Used
 Technologies used: HTML, CSS, JavaScript and P5 library.
