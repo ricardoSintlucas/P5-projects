@@ -1,5 +1,5 @@
 let video;
-let setOfChars = ['@', '#', '8', '&', 'o', ':', '*', '.', ' '];
+let setOfChars = ['@', '%', '#', '*', '+', '=', '-', ':', '.', ' '];
 function setup() {
   createCanvas(800, 600);
 
@@ -43,25 +43,34 @@ function draw() {
       // rect(0, 0, gridSize, 2); 
       // pop();
 
-      //character based on grayscale value
+      //rotate the rectangle based on grayscale value
+      // let rotation = map(grayscale, 0, 255, 0, PI);
       // push();
-      // translate(x, y);
-      // scale(-1, 1); // Flip the character horizontally
-      // let indexChar = floor(map(grayscale, 0, 255, 0, setOfChars.length));
-      // let char = setOfChars[indexChar];
       // fill(255);
-      // textSize(gridSize);
-      // text(char, 0, 0);
+      // noStroke();
+      // translate(x, y);
+      // rotate(rotation);
+      // rectMode(CENTER);
+      // rect(0, 0, 2, gridSize);
       // pop();
 
+      //character based on grayscale value
       push();
-      let a = map(grayscale, 0, 255, 5, 50);
-      noStroke();
-      fill(255, a);
-       ellipse(x, y, gridSize*3, gridSize*3);
-
+      translate(x, y);
+      scale(-1, 1); // Flip the character horizontally
+      let indexChar = floor(map(grayscale, 0, 255, 0, setOfChars.length));
+      let char = setOfChars[indexChar];
+      fill(255);
+      textSize(gridSize);
+      text(char, 0, 0);
       pop();
-     
+
+      // push();
+      // let a = map(grayscale, 0, 255, 5, 50);
+      // noStroke();
+      // fill(255, a);
+      //  ellipse(x, y, gridSize*3, gridSize*3);
+      // pop();     
 
     }
   }
