@@ -3,7 +3,7 @@ let movers=[];
 let attractor;
 
 // Gravitational constant (for global scaling)
-let G = 8;
+let G = 1;
 
 function setup() {
   createCanvas(800, 600);
