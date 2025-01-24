@@ -26,6 +26,7 @@ function draw() {
       let g = video.pixels[index + 1];
       let b = video.pixels[index + 2];
       let grayscale = (r + g + b) / 3;
+      let color = [video.pixels[index], video.pixels[index + 1], video.pixels[index + 2]];
       
       //Circle based on grayscale value
       //let size = map(grayscale, 0, 255, 2, gridSize);
@@ -34,6 +35,7 @@ function draw() {
       //rotate the rectangles based on grayscale value
       // let rotation = map(grayscale, 0, 255, 0, PI);
       // push();
+      // // fill(color[0], color[1], color[2]);
       // fill(255);
       // noStroke();
       // translate(x, y);
@@ -46,7 +48,7 @@ function draw() {
       //rotate the rectangle based on grayscale value
       // let rotation = map(grayscale, 0, 255, 0, PI);
       // push();
-      // fill(255);
+      // fill(color[0], color[1], color[2]);
       // noStroke();
       // translate(x, y);
       // rotate(rotation);
@@ -55,22 +57,22 @@ function draw() {
       // pop();
 
       //character based on grayscale value
-      push();
-      translate(x, y);
-      scale(-1, 1); // Flip the character horizontally
-      let indexChar = floor(map(grayscale, 0, 255, 0, setOfChars.length));
-      let char = setOfChars[indexChar];
-      fill(255);
-      textSize(gridSize);
-      text(char, 0, 0);
-      pop();
-
       // push();
-      // let a = map(grayscale, 0, 255, 5, 50);
-      // noStroke();
-      // fill(255, a);
-      //  ellipse(x, y, gridSize*3, gridSize*3);
-      // pop();     
+      // translate(x, y);
+      // scale(-1, 1); // Flip the character horizontally
+      // let indexChar = floor(map(grayscale, 0, 255, 0, setOfChars.length));
+      // let char = setOfChars[indexChar];
+      // fill(255);
+      // textSize(gridSize);
+      // text(char, 0, 0);
+      // pop();
+
+      push();
+      let a = map(grayscale, 0, 255, 5, 50);
+      noStroke();
+      fill(color[0], color[1],color[2], a);
+       ellipse(x, y, gridSize*3, gridSize*3);
+      pop();     
 
     }
   }
