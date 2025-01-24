@@ -24,8 +24,7 @@ class Attractor {
   
     // Method to display
     show() {
-      strokeWeight(4);
-      stroke(0);
+    noStroke();
       if (this.dragging) {
         fill(50);
       } else if (this.rollover) {

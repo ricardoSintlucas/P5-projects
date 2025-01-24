@@ -25,8 +25,9 @@ class Mover {
   
     show() {
       noStroke();
+      push();
       fill(this.color[0], this.color[1], this.color[2]);
-
       circle(this.position.x, this.position.y, this.radius * 2);
+      pop();
     }
   }
