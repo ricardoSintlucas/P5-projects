@@ -3,12 +3,12 @@ let setOfChars = ["@", "%", "#", "*", "+", "=", "-", ":", ".", " "];
 let partScreen;
 let fontLoaded = false;
 function setup() {
-  createCanvas(800, 600, WEBGL);
+  createCanvas(1200, 900, WEBGL);
   loadFont("Roboto-Regular.ttf", drawText);
   // Webcam capture (at the size of the window)
   video = createCapture(VIDEO);
   scale(-1, 1);
-  video.size(800, 600);
+  video.size(1200, 900);
   video.hide();
   partScreen = width / 6;
 }
